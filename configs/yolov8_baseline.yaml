@@ -1,0 +1,16 @@
+#使用する学習済みYOLOv8モデル
+model_name: yolov8n.pt
+#画像サイズ
+imgsz: 640
+#推論時のしきい値
+conf_thres: 0.25
+iou_thres: 0.45
+#入力画像フォルダ
+source_dir: data/images #この中の画像に対して一括推論
+#出力先
+output_dir: runs/detect/baseline
+#出力オプション
+save_img: true
+save_txt: true
+save_csv: true
+run_name: exp

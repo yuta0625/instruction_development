@@ -1,0 +1,13 @@
+#使用する学習済みYOLOv8モデル
+model_name: yolov8n.pt
+#YOLOv8形式のdata.yamlへのパス
+data_yaml: data/data.yaml
+
+#学習ハイパーパラメータ
+epochs: 50
+imgsz: 640
+batch_size: 16
+
+#出力先
+output_dir: runs/train
+run_name: yolov8_baseline

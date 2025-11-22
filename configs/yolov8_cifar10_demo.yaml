@@ -1,0 +1,12 @@
+model_name: yolov8n.pt
+imgsz: 32
+conf_thres: 0.25
+iou_thres: 0.45
+
+source_dir: data/images/cifar10_test
+output_dir: runs/detect/cifar10_demo
+
+save_img: true
+save_txt: true
+save_csv: true
+run_name: exp
