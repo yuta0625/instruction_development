@@ -5,8 +5,10 @@ iou_thres: 0.45
 
 source_dir: data/expw_raw/origin
 output_dir: runs/detect/origin_demo
+result_dir: runs/result/origin_demo
 
 save_img: true
 save_txt: true
 save_csv: true
+save_json: true
 run_name: exp
