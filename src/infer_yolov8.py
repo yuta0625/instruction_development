@@ -57,13 +57,21 @@ def save_results_as_csv(results: List[Any], out_dir: Path, filename: str = "pred
     return out_path
 
 
-def run_inference(cfg_path: str = "configs/yolov8_baseline.yaml"):
+def run_inference(cfg_path: str = "configs/yolov8_baseline.yaml", step: int | None = None):
     cfg = load_cfg(cfg_path)
 
     model = YOLO(cfg["model_name"])
-
+    
+    source = cfg["source_dir"]
+    
+    if step is not None:
+      img_dir = Path(source)
+      all_imgs = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))
+      #1/step
+      source = all_imgs[::step]
+    
     results = model.predict(
-        source=cfg["source_dir"],
+        source=source,
         imgsz=cfg["imgsz"],
         conf=cfg["conf_thres"],
         iou=cfg["iou_thres"],

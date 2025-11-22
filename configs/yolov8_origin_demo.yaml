@@ -1,0 +1,12 @@
+model_name: yolov8n.pt
+imgsz: 640
+conf_thres: 0.25
+iou_thres: 0.45
+
+source_dir: data/expw_raw/origin
+output_dir: runs/detect/origin_demo
+
+save_img: true
+save_txt: true
+save_csv: true
+run_name: exp
